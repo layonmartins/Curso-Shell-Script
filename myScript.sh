@@ -23,5 +23,42 @@ MyFunction(){
 #echo $MyConstant
 
 #Access directories
-cd MyDirectory/
-ls
+#cd MyDirectory/
+#ls
+
+<<Comment
+MyFunction(){
+	VARIABLE=$1;
+	if test "$VARIABLE" -gt 10
+		then
+		echo "is greater than 10"
+	elif test "$VARIABLE" -eq 10
+		then
+		echo "is equal to 10"
+	else
+		echo "is less than 10"
+	fi
+}
+Comment
+
+MyFunction(){
+	case $1 in
+		10) echo "is 10";;
+		9) echo "is 9";;
+		7|8) echo "is 7 or 8";;
+		*) echo "is less than 6 or greater than 10";;
+	esac
+}
+
+MyFunction $1
+
+
+
+
+
+
+
+
+
+
+
